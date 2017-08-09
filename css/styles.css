@@ -1,0 +1,211 @@
+* {
+	box-sizing: border-box;
+}
+
+
+
+body{
+	margin: 0;
+	background-color: orange;
+	/*background-image: http://foundermantras.com/img/quotes.png;*/
+	height: 100vh;
+	font-family:circular_black,Helvetica,sans-serif;
+}
+
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 8rem;
+	display: flex;
+	justify-content: space-between;
+	text-transform: uppercase;
+	color:grey;
+
+}
+
+a {   text-decoration: none;   color: grey; }
+
+footer {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 8rem;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: space-between;
+	text-transform: uppercase;
+	color:grey;
+}
+
+main {
+	padding: 8rem 0;	
+}
+
+.quotes--grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 0.5em;
+
+}
+
+.quotes--grid .sharedby {
+	display:none;
+}
+
+@media all and (min-width: 766px) {
+	.quotes--grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media all and (min-width: 1024px) {
+	.quotes--grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/*singular quotes*/
+/* onlyshow one. The active one*/
+
+.quotes--singular .quote {
+	position: relative;
+	display: none;
+}
+
+.quotes--singular .quote.is-active {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	font-size:30px;
+/*	padding-left: 0em;	*/
+
+}
+
+@media all and (min-width: 766px) {
+	.quotes--singular .quote.is-active  {
+		padding-left:5em;
+	}
+}
+
+@media all and (min-width: 1024px) {
+  .quotes--singular .quote.is-active  {
+		padding-left:8em;
+		font-size:45px;
+	}
+}
+
+
+	.quotes--singular .quote .meta {
+		grid-column:1;
+		grid-row:1;
+	}	
+
+.quotes--singular .quote.is-active .meta .author {
+	display: grid;
+	grid-template-columns: auto 1fr;
+}
+
+	.quotes--singular .quote .meta .author .line {
+		grid-column:2;
+		grid-row:1;
+	}			
+
+.quotes--singular .quote .dates{
+
+	display:none;
+
+}
+
+.quotes--singular .quote .meta {
+
+	padding: 30px;	
+	border-style: solid;
+	border-width:5px;
+	font-size: 30px;
+	color:white;
+	border-color: orange;
+}
+
+.text {
+	/*	font-size: 30px;*/
+    line-height: 1.2em;
+    color: white;
+    font-family: circular_black,Helvetica,sans-serif;
+		line-height: 1.2em;
+		display: block;
+		text-align: left;
+    width: 10em;
+		overflow-wrap: normal;
+}
+
+.line {
+	width: 20px;
+	height: 2px;			
+	background-color: white;
+	margin-right: 8px;
+}
+
+.meta {
+	margin-top: 0.25em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.author {
+	display: flex;
+	align-items: center;
+}
+
+.author > *  {
+	font-size: 0.5em;
+}
+
+.dates {
+	font-size: 0.5em;
+}
+
+.mantras {
+		border: 5px solid grey;
+	  padding: 25px 15px;
+	  height: 80px;
+		text-align: center;
+
+		}
+
+.mantras::after {
+    content: "";
+    position: absolute;
+		bottom:2.5em;
+    border-width: 13px 13px 0;
+    border-style: solid;
+    border-color: grey transparent;
+    display: block;	
+
+    
+
+}
+	
+/*header footer{
+	font-family:circular_bold,Helvetica,sans-serif;
+	font-size: 14px;
+	display: inline;
+	text-decoration: none;
+	color:grey;
+	text-transform: uppercase;
+	}*/
+/*
+.date{
+
+	float:left;
+}
+.archies{
+	float:right;
+}
+
+.mantras{
+	float:center;
+	}*/
+	
